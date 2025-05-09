@@ -30,8 +30,6 @@ contract ContextCache {
      
      **/
 
-    // essentially simulates tstore but works even in a static call !!
-    // .. unlike tstore which doesn't work in static calls
     // always init this first in a context
     // never use with modifiers
     // VERY sensitive to memory declared return variables!! so must use "this.contextedExampleFunction" pattern.. see above
