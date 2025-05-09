@@ -13,14 +13,14 @@ contract ContextCache {
 
      // any external view function
      function someFunction(
-        ...primitiveArgs.. callDataArgs .. NO memoryArgs
+        ...primitiveArgs.. callDataArgs .. memory args OK 
      ) external view returns(.. any args even memory..) {
         bytes memory res = this.contextedSomeFunction()
         (.. returnArgs ..) = abi.decode(res, (.. returnArgsTypes ...));
      }
 
      function contextedSomeFunction(
-        ...primitiveArgs.. callDataArgs .. NO memoryArgs
+        ...primitiveArgs.. callDataArgs .. memory args OK if directly from params of caller 
      ) external view returns(bytes memory ret) {
         _initContextCache();
         // business logic
