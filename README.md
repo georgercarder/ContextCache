@@ -1,66 +1,28 @@
-## Foundry
+## ContextCache
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
 
-Foundry consists of:
+A pattern to cheaply replicate tstore functionality in a staticcall context.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+PERFECT for use in view functions requiring lots of intermediate caching of processed data.
 
-## Documentation
+In fact, exceeds tstore functionality since tstore maps WORD to WORD.
 
-https://book.getfoundry.sh/
+But ContextCache maps WORD to WORD, or WORD to bytes.
 
-## Usage
+To run tests just call `forge test -vv`
 
-### Build
+Usage:
 
-```shell
-$ forge build
-```
+Just inherit the `ContextCache` into any contract where you need this functionality, 
+and follow the usage pattern outlined in the comments of the `ContractCache` contract
+and the test.
 
-### Test
 
-```shell
-$ forge test
-```
+Open to dev and security contract work. Shoot me an email.
 
-### Format
+[georgercarder@gmail.com](georgercarder@gmail.com)
 
-```shell
-$ forge fmt
-```
+Support my work on this library by donating ETH or other coins to
 
-### Gas Snapshots
+0x1331DA733F329F7918e38Bc13148832D146e5adE
 
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
