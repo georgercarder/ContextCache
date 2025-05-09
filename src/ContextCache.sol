@@ -7,6 +7,8 @@ contract ContextCache {
     /*
 
      Usage pattern. See tests for examples.
+     This pattern is important as it is necesarry to line up the cache memory location
+     so it can be accessed anytime, anywhere in the context
 
      // note: since keys are somewhat arbitrary (can be strings so are essentially not typed), 
           be sure you have in place a well reasoned key naming scheme in your codebase
